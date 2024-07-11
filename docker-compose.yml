@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build:
+      context: ./fastapi
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+
+  express:
+    build:
+      context: ./express
+    ports:
+      - "3000:3000"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+
+  springboot:
+    build:
+      context: ./springboot
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+
+  gin:
+    build:
+      context: ./gin
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
